@@ -1,10 +1,11 @@
 f = open("input.txt", "r")
+lines = f.readlines()
 
 numbers = []
-for x in f:
-    numbers.append(f.readline())
+for line in lines:
+    numbers.append(int(line))
 
-for x in range(50):
+for x in range(len(numbers)):
     for y in range(x):
-        if int(numbers[x]) + int(numbers[y]) == 2020:
-            print(int(numbers[x]) * int(numbers[y]))
+        if numbers[x] + numbers[y] == 2020:
+            print(numbers[x] * numbers[y])
